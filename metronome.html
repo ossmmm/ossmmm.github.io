@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>メトロノーム</title>
+    <style>
+            body {
+        text-align: center; /* テキストを中央揃えにする */
+        font-family: Arial, sans-serif; /* フォントスタイルを設定 */
+    }
+
+    .container {
+        margin: 0 auto; /* 上下のマージンは0、左右は自動で中央揃え */
+        width: 80%; /* コンテナの幅を指定（必要に応じて変更） */
+    }
+    #line {
+        width: 300px;
+        height: 2px;
+        background-color: black;
+        position: relative;
+        margin: 20px auto; /* 左右のマージンを自動に設定して中央揃えにする */
+    }
+    #dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: blue;
+        position: absolute;
+        top: -5px; /* 上位置を調整して中央に配置 */
+        left: 50%; /* 左位置を50%に設定して中央に配置 */
+        transform: translateX(-50%); /* X軸方向に自身の幅の50%分移動して完全に中央に配置 */
+    }
+            #startStopButton {
+        font-size: 20px;       /* フォントサイズ */
+        padding: 10px 20px;    /* 内側の余白 */
+        background-color: #4CAF50; /* 背景色 */
+        color: white;          /* テキスト色 */
+        border: none;          /* 境界線なし */
+        border-radius: 5px;    /* 角の丸み */
+        cursor: pointer;       /* カーソルスタイル */
+        margin: 10px;          /* 外側の余白 */
+    }
+
+    #startStopButton:hover {
+        background-color: #45a049; /* ホバー時の背景色 */
+    }
+    
+    #presetBpms {
+        text-align: center; /* ボタンを中央揃えにする */
+    }
+
+    .bpmButton {
+        width: 80px;  /* ボタンの幅を固定 */
+        height: 40px; /* ボタンの高さを固定 */
+        margin: 5px 5px 5px 5px;  /* ボタン間のマージン */
+        font-size: 14px; /* フォントサイズ */
+        line-height: 40px; /* テキストをボタンの中央に配置 */
+        display: inline-block; /* ボタンをインラインブロック要素として表示 */
+        margin-right: -4px; /* インラインブロック間の空白を除去 */
+    }
+
+    #presetBpms:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>メトロノーム</h1>
+    <button id="startStopButton">開始/停止</button>
+    <div id="line">
+        <div id="dot"></div>
+    </div>
+    <input type="number" id="bpmInput" value="60">
+    <label for="bpmInput">BPM</label>
+    
+    <!-- BPM設定ボタンを追加 -->
+<div id="presetBpms">
+  <button class="bpmButton" data-bpm="60">60 BPM</button>
+  <button class="bpmButton" data-bpm="70">70 BPM</button>
+  <button class="bpmButton" data-bpm="80">80 BPM</button>
+  <br>
+  <button class="bpmButton" data-bpm="90">90 BPM</button>
+  <button class="bpmButton" data-bpm="100">100 BPM</button>
+  <button class="bpmButton" data-bpm="110">110 BPM</button>
+  <br>
+  <button class="bpmButton" data-bpm="120">120 BPM</button>
+  <button class="bpmButton" data-bpm="130">130 BPM</button>
+  <button class="bpmButton" data-bpm="140">140 BPM</button>
+  <br>
+  <button class="bpmButton" data-bpm="150">150 BPM</button>
+  <button class="bpmButton" data-bpm="160">160 BPM</button>
+  <button class="bpmButton" data-bpm="170">170 BPM</button>
+  <br>
+  <button class="bpmButton" data-bpm="180">180 BPM</button>
+</div>
+
+<!-- 残りのHTMLコンテンツ -->
+
+
+    <script src="metronome.js"></script>
+</div>
+</body>
+</html>
